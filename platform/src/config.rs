@@ -1,4 +1,4 @@
-use roc_std::RocStr;
+use roc_std::{ RocList, RocStr };
 
 #[derive(Default)]
 #[repr(C)]
@@ -8,6 +8,9 @@ pub struct Config {
     pub title: RocStr,
     pub height: u32,
     pub width: u32,
+    pub x: RocList<i32>,
+    pub y1: RocList<i32>,
+    pub y2: RocList<i32>,
 }
 
 pub fn roc_config() -> Config {
