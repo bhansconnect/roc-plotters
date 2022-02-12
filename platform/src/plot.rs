@@ -2,7 +2,7 @@ use crate::config::Config;
 use plotters::coord::{Shift};
 use plotters::prelude::*;
 
-pub fn plot(config: &Config) -> Result<(), Box<dyn std::error::Error>> {
+pub fn plot(config: &Config) {
     let isSvg = config.outputFilePath.as_str().ends_with(".svg");
     if isSvg {
         let backend = construct_svg_backend(config);
@@ -11,7 +11,6 @@ pub fn plot(config: &Config) -> Result<(), Box<dyn std::error::Error>> {
         let backend = construct_bitmap_backend(config);
         plot_with(backend, config);
     }
-    Ok(())
 }
 
 fn construct_area<Backend: DrawingBackend>(
