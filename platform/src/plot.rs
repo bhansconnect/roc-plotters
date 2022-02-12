@@ -45,13 +45,9 @@ fn plot_with<Backend: DrawingBackend>(
     config: &Config,
 ) -> Result<(), DrawingAreaErrorKind<Backend::ErrorType>> {
     let area = construct_area(backend, config)?;
-    println!("x: {:?}", config.x);
-    println!("y1: {:?}", config.y1);
-    println!("y2: {:?}", config.y2);
-    let xy1: Vec<(i32, i32)> = config.x.into_iter().zip(config.y1.into_iter()).collect();
-    let xy2: Vec<(i32, i32)> = config.x.into_iter().zip(config.y2.into_iter()).collect();
-    println!("xy1: {:?}", xy1);
-    println!("xy2: {:?}", xy2);
+    dbg!(config);
+    let xy1: Vec<(i32, i32)> = dbg!(config.x.into_iter().zip(config.y1.into_iter()).collect());
+    let xy2: Vec<(i32, i32)> = dbg!(config.x.into_iter().zip(config.y2.into_iter()).collect());
     let mut cc = ChartBuilder::on(&area)
         .margin(5)
         .set_all_label_area_size(50)

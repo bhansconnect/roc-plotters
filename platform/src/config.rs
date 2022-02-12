@@ -1,6 +1,6 @@
 use roc_std::{ RocList, RocStr };
 
-#[derive(Default)]
+#[derive(Default, Debug)]
 #[repr(C)]
 pub struct Config {
     pub outputFilePath: RocStr,
